@@ -1,0 +1,45 @@
+1. https://github.com/sinyoung-heo/03.2021_SMG.git
+
+ 
+
+2.
+
+.idea
+
+Android Studio의 경우 버전 제어에 저장해야 하는 파일은
+
+gradle을 사용하여 명령줄에서 애플리케이션을 빌드하는 데 필요한 파일뿐이다.
+
+따라서 이 폴더의 파일들을 제외해도 된다.
+
+
+
+Thumbs.db
+
+파일은 특정 폴더의 이미지의 썸네일 버전의 캐시 복사본을 저장하는 역할을 한다.
+
+
+
+.classpath
+
+class들의 경로를 나타냄 
+
+
+
+*.iml
+
+Intelli J IDEA Module 의 약자로, Intelli J 의 Module 구성에 대해 xml 형태로 기술해 놓은 파일이다
+
+협업을할때 다른 os와 다른 ide 환경등을 사용한다면 계속 change가 발생하기 때문에 ignore
+
+
+
+build/
+
+빌드에 사용되는 폴더들이다.
+
+
+
+개개인이 사용하는 환경설정 파일이나 .class, .exe와 같은 실행파일, .log와 같은 로그파일 등이 
+
+병합하는 과정에서 충돌이 날 수 있기 때문에 이와 같은 파일들은 git 리포지토리에 올리지 앟는다.

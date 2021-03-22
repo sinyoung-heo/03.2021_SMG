@@ -1,0 +1,97 @@
+안드로이드의 Layout Manager 가 어떤 것들이 있고 각각은 어떤 특징이 있는지 간단히 정리하라.
+안드로이드의 Layout Manager에는 LinearLayoutManager, GridLayoutManager, StaggeredGridLayoutManager가 있다.
+
+LinearLayoutManager는 수평, 수직으로 배치시켜주는 레이아웃 매니저이다.
+
+GridLayoutManager는 그리드 화면으로 배치시켜주는 레이아웃 매니저이다.
+
+StaggeredGridLayoutManager는 높이가 불규칙한 그리드 화면으로 배치시켜주는 레이아웃 매니저이다.
+
+ 
+
+안드로이드 layout xml 내에서 사용하는 단위(px, dp, sp 등) 은 어떤 것들이 있는지 간단히 정리하라. 추가로 match_parent 와 wrap_content 에 대해서도 설명하라
+안드로이드 크기 단위는 dp, sp, pt, px, mm, in이 있다.
+
+dp는 레이아웃을 정의할 때 레이아웃 치수나 위치를 밀도 독립적 방식으로 표현하기위해 사용하는 가상 픽셀 단위이다.
+
+sp는 텍스트의 크기 단위이다.
+
+in은 인치기반의 물리적 스크린 크기이다.
+
+mm은 밀리미터 기반의 스크린 크기이다.
+
+px는 스크린상 실제 픽셀에 대응하는 단위이다.
+
+pt는 화면 밀도와 상관없이 1pt는 물리적 화면크기의 1/72인치이다. 모든 기기에서 72pt는 1인치이다.
+
+match_parent는 부모가 가지는 길이를 모두 채울 때 사용한다. 해당 레이아웃을 취하는 컨테이너의 길이를 모두 채우는 것이다.
+
+wrap_content는 해당 뷰가 그려질 수 있게 필요한 길이만 사용한다.
+
+XML 관련하여 다음 용어들에 대해 정리하라
+Element : XML에서 Element는 시작과 끝 태그를 포함해서 그 사이에 들어가는 모든 것을 말한다.
+Element에는 다른 Element, 텍스트, 속성, 또는 위의 것들이 전부 결합된 형태들이 들어갈 수 있다.
+Attribute : XML문서 작성 요소에는 속성(Attribute)이라고 하는 부가 정보를 넣을 수 있다.
+XML의 속성은 따옴표로 감싸져야만 한다. 작은 따옴표 혹은 큰 따옴표 중 하나를 사용한다.
+DTD/Schema : DTD는 하나의 시스템 내에서 사용할 XML 데이터의 구조를 정의하여 유효성을 점검할 때
+사용한다. 스키마는 서로 다른 사스템 사이의 데이터를 주고 받아 사용할 수 있게 데이터의 표준화를 위해
+제공하고 있다.
+Namespace : XML Namespace는 XML요소 간의 이름에 대한 충돌을 방지해 주는 방법을 제공한다.
+요소의 이름과 속성의 이름을 하나의 그룹으로 묶어주어 이름에 대한 충돌을 해결한다.
+Android 의 다음 Widget 들에 대하여 대표적인 속성/동작/이벤트 를 조사하여 정리하라. 생긴 모양을 소개하기위해 이미지를 본문에 삽입하라
+TextView 
+
+TextView는 안드로이드의 가장 기본적인 View이다.
+기본 속성은 width, height, text, textsize, textcolor, textstyle등이 있다.
+대표적으로 onClickListener을 생성하여 클릭 이벤트를 동작할 수 있다.
+
+ 
+
+ImageView
+
+비트맵 또는 드로어블 리소스 같은 이미지 리소스를 그라는 뷰이다.
+이미지뷰는 이미지 색조를 조정하고 크기 조정이 가능하다.
+width, height, src등 속성이 있다.
+adjustViewBounds속성은 특정 뷰 그룹에 이미지뷰를 추가하면 뷰그룹은 이미지뷰 영역을 결정해준다.
+tint 속성은 이미지뷰에 색조를 입히는 속성이다.
+baseLine 속성은 화면상에서 ImageView의 정렬 기준선을 지정하는 속성이다.
+OnClickListener를 통해 클릭 이벤트 동작을 설정할 수 있다.
+
+ProgressBar
+
+진행 상태를 표시함에 있어서 불확정적, 확정적 상태표시 모드를 지원한다.
+width,height속성이 있다. 어떤 속성도 지정하지 않으면 불확정적 모드로 동작한다.
+확정적 모드로 상태표시를 하기 위해서는 style속성을 Widget_ProgressBar_Horizontal로 지정하고
+progress 속성을 사용하여 값을 지정하면 된다.
+
+Button
+
+버튼의 속성은 width,height, text 등이 있다.
+대표적으로 클릭 이벤트 동작을 처리할 수 있다.
+
+Switch
+
+스위치의 주요 속성은 showText, textOff, textOn, textStyle, thumb 등이 있다.
+showText는 Text가 보일지 말지 결정하는 속성이다.
+textOff는 off상태일 때 표시될 text를 지정한다
+textOn은 on상태일 때 표시될 text를 지정한다.
+thumb는 사용자 드래그를 통해 on/off설정이 가능하도록하는 thumb모양이다.
+
+EditText
+
+속성은 TexView와 비슷하다. width,height,weight,text 등을 설정할 수 있다.
+enabled의 값을 "true", "false" 설정하여 텍스트 입력 및 수정을 할 수 있다.
+
+Switch
+
+CheckBox
+
+width, height, text등을 설정할 수 있다.
+클릭 이벤트를 통해 cheked의 true, false등을 설정할 수 있다.
+
+SeekBar
+
+width, height, max, progress등의 속성을 설정할 수 있다.
+onStartTrackingTouch는 최초 탭하여 드랴그 시작 시 발생하는 이벤트이다.
+onProgressChanged는 드래그 하는 중 발생하는 이벤트이다.
+onStopTrackingTouch는 드래그를 멈출 때 발생하는 이벤트이다.
