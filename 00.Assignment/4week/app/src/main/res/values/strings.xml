@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="check_use_firewall">Use Filewall</string>
+    <string name="btn_apply">Apply</string>
+</resources>
