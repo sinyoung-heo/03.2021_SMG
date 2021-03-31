@@ -11,7 +11,7 @@
 - 타이머가 존재하며, 타이머가 끝나면 게임이 종료된다.
 - 계단 오르기에 성공하면 약간의 타이머 시간이 증가한다.
 
-![image-20210331172758571](D:\99. Default\AppData\Roaming\Typora\typora-user-images\image-20210331172758571.png)
+![image-20210331172758571](image-20210331172758571.png)
 
 
 
@@ -32,10 +32,10 @@
 
 3. 타이머를 모두 소진하거나 계단을 잘못 오를 경우 게임을 종료한다.
 
-   ![image-20210331173443840](D:\99. Default\AppData\Roaming\Typora\typora-user-images\image-20210331173443840.png)
+   ![image-20210331173443840](image-20210331173443840.png)
 
 
 
 ## 4. 개발 일정
 
-![image-20210331173507517](D:\99. Default\AppData\Roaming\Typora\typora-user-images\image-20210331173507517.png)
+![image-20210331173507517](image-20210331173507517.png)
