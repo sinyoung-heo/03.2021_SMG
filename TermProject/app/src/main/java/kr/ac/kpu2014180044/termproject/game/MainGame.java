@@ -12,6 +12,8 @@ import kr.ac.kpu2014180044.termproject.ui.GameView;
 import kr.ac.kpu2014180044.termproject.utils.CollisionHelper;
 
 public class MainGame {
+    public static int DIR_LEFT = -1;
+    public static int DIR_RIGHT = 1;
     private static final String TAG = MainGame.class.getSimpleName();
     // singleton
     private static MainGame instance;
@@ -28,25 +30,25 @@ public class MainGame {
 
     //    Player player;
     ArrayList<ArrayList<GameObject>> layers;
-    private static HashMap<Class, ArrayList<GameObject>> recycleBin = new HashMap<>();
+//    private static HashMap<Class, ArrayList<GameObject>> recycleBin = new HashMap<>();
 
-    public void recycle(GameObject object) {
-        Class clazz = object.getClass();
-        ArrayList<GameObject> array = recycleBin.get(clazz);
-        if (array == null) {
-            array = new ArrayList<>();
-            recycleBin.put(clazz, array);
-        }
-        array.add(object);
-    }
-    public GameObject get(Class clazz) {
-        ArrayList<GameObject> array = recycleBin.get(clazz);
-        if (array == null || array.isEmpty()) return null;
-        return array.remove(0);
-    }
+//    public void recycle(GameObject object) {
+//        Class clazz = object.getClass();
+//        ArrayList<GameObject> array = recycleBin.get(clazz);
+//        if (array == null) {
+//            array = new ArrayList<>();
+//            recycleBin.put(clazz, array);
+//        }
+//        array.add(object);
+//    }
+//    public GameObject get(Class clazz) {
+//        ArrayList<GameObject> array = recycleBin.get(clazz);
+//        if (array == null || array.isEmpty()) return null;
+//        return array.remove(0);
+//    }
 
     public enum Layer {
-        bg1, enemy, bullet, player, bg2, ui, controller, ENEMY_COUNT
+        bg1, bg2, enemy, brick, player, ui, controller, ENEMY_COUNT
     }
     public boolean initResources() {
         if (initialized) {
@@ -72,6 +74,107 @@ public class MainGame {
         VerticalScrollBackground clouds = new VerticalScrollBackground(R.mipmap.clouds, 20);
         add(Layer.bg2, clouds);
 
+        // Brick
+        float startX = 550.0f;
+        float startY = 1800.0f;
+        float offsetX = 150.0f;
+        float offsetY = 75.0f;
+
+        // 1
+        for (int i = 0; i < 3; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            } else {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            }
+            add(Layer.brick, brick);
+            startX += offsetX * DIR_LEFT;
+            startY -= offsetY;
+        }
+        // 2
+        startX += offsetX * DIR_RIGHT * 2;
+        for (int i =0; i < 4; ++i) {
+            Brick brick;
+            if ( i == 4 - 1) {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            } else {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            }
+            add(Layer.brick, brick);
+            startX += offsetX * DIR_RIGHT;
+            startY -= offsetY;
+        }
+        // 3
+        startX += offsetX * DIR_LEFT * 2;
+        for (int i =0; i < 4; ++i) {
+            Brick brick;
+            if ( i == 4 - 1) {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            } else {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_LEFT;
+            startY -= offsetY;
+        }
+        // 4
+        startX += offsetX * DIR_RIGHT * 2;
+        for (int i =0; i < 2; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            } else {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_RIGHT;
+            startY -= offsetY;
+        }
+        // 5
+        startX += offsetX * DIR_LEFT * 2;
+        for (int i =0; i < 2; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            } else {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_LEFT;
+            startY -= offsetY;
+        }
+        // 6
+        startX += offsetX * DIR_RIGHT * 2;
+        for (int i =0; i < 4; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            } else {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_RIGHT;
+            startY -= offsetY;
+        }
+        // 7
+        startX += offsetX * DIR_LEFT * 2;
+        for (int i =0; i < 2; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            } else {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_LEFT;
+            startY -= offsetY;
+        }
 
         initialized = true;
         return true;
