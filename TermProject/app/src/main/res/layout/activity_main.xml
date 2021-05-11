@@ -6,21 +6,21 @@
     android:layout_height="match_parent"
     tools:context="MainActivity">
 
-
     <kr.ac.kpu2014180044.termproject.ui.GameView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
 
     <ImageButton
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/DirChange"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
         android:layout_alignParentBottom="true"
         />
-
     <ImageButton
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/UpStairs"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         />
