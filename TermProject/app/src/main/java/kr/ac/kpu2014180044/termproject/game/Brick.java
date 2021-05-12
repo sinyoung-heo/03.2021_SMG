@@ -19,6 +19,14 @@ public class Brick implements GameObject {
         this.brickBitmap = new GameBitmap(R.mipmap.cookierun_platform_120x40);
     }
 
+    float getPosX() { return this.x; }
+    float getPosY() { return this.y; }
+    int getDir() { return this.correct_dir;}
+
+    public void downStairs() {
+        this.y += 75.0f;
+    }
+
     @Override
     public void update() {
 

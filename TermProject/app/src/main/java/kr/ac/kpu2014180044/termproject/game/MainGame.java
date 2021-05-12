@@ -28,8 +28,12 @@ public class MainGame {
     public float frameTime;
     private boolean initialized;
 
-    //    Player player;
-    ArrayList<ArrayList<GameObject>> layers;
+    public static Player player;
+    public static Player getPlayer() {
+        return player;
+    }
+    public static ArrayList<ArrayList<GameObject>> layers;
+    public static ArrayList<ArrayList<GameObject>> getLayers() { return layers; }
 //    private static HashMap<Class, ArrayList<GameObject>> recycleBin = new HashMap<>();
 
 //    public void recycle(GameObject object) {
@@ -59,9 +63,9 @@ public class MainGame {
 
         initLayers(Layer.ENEMY_COUNT.ordinal());
 
-//        player = new Player(w/2, h - 300);
+        player = new Player(575, 1700, DIR_LEFT);
 //        //layers.get(Layer.player.ordinal()).add(player);
-//        add(Layer.player, player);
+        add(Layer.player, player);
 //        add(Layer.controller, new EnemyGenerator());
 
         int margin = (int) (20 * GameView.MULTIPLIER);
@@ -83,7 +87,7 @@ public class MainGame {
         // 1
         for (int i = 0; i < 3; ++i) {
             Brick brick;
-            if ( i == 2 - 1) {
+            if ( i == 3 - 1) {
                 brick = new Brick(startX, startY, DIR_RIGHT);
             } else {
                 brick = new Brick(startX, startY, DIR_LEFT);
@@ -151,7 +155,7 @@ public class MainGame {
         startX += offsetX * DIR_RIGHT * 2;
         for (int i =0; i < 4; ++i) {
             Brick brick;
-            if ( i == 2 - 1) {
+            if ( i == 4 - 1) {
                 brick = new Brick(startX, startY, DIR_LEFT);
             } else {
                 brick = new Brick(startX, startY, DIR_RIGHT);
@@ -166,9 +170,9 @@ public class MainGame {
         for (int i =0; i < 2; ++i) {
             Brick brick;
             if ( i == 2 - 1) {
-                brick = new Brick(startX, startY, DIR_LEFT);
-            } else {
                 brick = new Brick(startX, startY, DIR_RIGHT);
+            } else {
+                brick = new Brick(startX, startY, DIR_LEFT);
             }
             add(Layer.brick, brick);
 

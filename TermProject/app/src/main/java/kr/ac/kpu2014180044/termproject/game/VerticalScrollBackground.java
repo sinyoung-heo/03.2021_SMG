@@ -52,4 +52,9 @@ public class VerticalScrollBackground implements GameObject {
             curr += dh;
         }
     }
+
+    @Override
+    public void downStairs() {
+
+    }
 }

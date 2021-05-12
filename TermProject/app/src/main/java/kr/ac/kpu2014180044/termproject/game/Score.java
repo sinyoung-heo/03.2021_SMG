@@ -57,4 +57,9 @@ public class Score implements GameObject {
         }
     }
 
+    @Override
+    public void downStairs() {
+
+    }
+
 }
