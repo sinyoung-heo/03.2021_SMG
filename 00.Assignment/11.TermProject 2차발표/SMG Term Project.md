@@ -45,10 +45,10 @@
 
         ​				플레이어와 계단의 위치값을 조정한다.
 
-        ![SMG_Class](D:\03. GitHub\03.2021_SMG\00.Assignment\11.TermProject 2차발표\SMG_Class.PNG)
+        ![SMG_Class](SMG_Class.PNG)
 
-        ![upStairs__](D:\03. GitHub\03.2021_SMG\00.Assignment\11.TermProject 2차발표\upStairs__.PNG)
+        ![upStairs__](upStairs__.PNG)
 
 4. ## git commit
 
-   ![SMG_Commit](D:\03. GitHub\03.2021_SMG\00.Assignment\11.TermProject 2차발표\SMG_Commit.PNG)
+   ![SMG_Commit](SMG_Commit.PNG)
