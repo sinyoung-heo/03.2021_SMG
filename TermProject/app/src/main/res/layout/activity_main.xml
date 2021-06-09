@@ -4,25 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scaleX="1"
     tools:context="MainActivity">
 
     <kr.ac.kpu2014180044.termproject.ui.GameView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent" />
 
     <ImageButton
         android:id="@+id/DirChange"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        />
+        android:layout_alignParentBottom="true" />
+
     <ImageButton
         android:id="@+id/UpStairs"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        />
+        android:layout_alignParentBottom="true" />
+
+    <ProgressBar
+        android:id="@+id/ProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="320dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:max="100"
+        android:progress="100"
+        android:progressTint="#85E119"
+        android:scaleY="10"
+        android:translationY="40dp" />
 
 </RelativeLayout>

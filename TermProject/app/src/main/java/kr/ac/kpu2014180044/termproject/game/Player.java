@@ -20,6 +20,7 @@ public class Player implements GameObject {
     private GameBitmap bitmap_right;
     private int dir;
     private int currentStair = 0;
+    
 
     public Player(float x, float y, int dir) {
         this.x = x;
