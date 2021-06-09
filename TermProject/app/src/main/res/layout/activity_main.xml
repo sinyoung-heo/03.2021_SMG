@@ -13,14 +13,14 @@
 
     <ImageButton
         android:id="@+id/DirChange"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         />
     <ImageButton
         android:id="@+id/UpStairs"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         />

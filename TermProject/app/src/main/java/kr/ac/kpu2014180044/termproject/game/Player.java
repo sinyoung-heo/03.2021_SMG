@@ -69,6 +69,8 @@ public class Player implements GameObject {
             this.x = nextBrick.getPosX();
             this.y = nextBrick.getPosY() - 90.0f;
             ++currentStair;
+
+            mainGame.score.addScore(1);
         }
     }
 }
