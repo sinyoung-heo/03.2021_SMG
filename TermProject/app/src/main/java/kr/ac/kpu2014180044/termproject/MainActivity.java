@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private ImageButton dirChangeButton;
     private ImageButton upStairButton;
+    private ProgressBar progressBar;
     MainGame mainGame;
     Player player;
     private int startIdx = 0;
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         dirChangeButton = findViewById(R.id.DirChange);
         upStairButton = findViewById(R.id.UpStairs);
+        progressBar = findViewById(R.id.ProgressBar);
 
         dirChangeButton.setImageResource(R.mipmap.dir_change);
         dirChangeButton.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d(TAG, "onBtnClick dirChange");
                 player = mainGame.getPlayer();
                 player.setupDir();
+                player.setProgressBar(progressBar);
             }
         });
 
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 // Player
                 player = mainGame.getPlayer();
                 player.upStairs();
+                player.setProgressBar(progressBar);
             }
         });
     }

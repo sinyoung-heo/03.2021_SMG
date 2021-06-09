@@ -2,6 +2,7 @@ package kr.ac.kpu2014180044.termproject.game;
 
 import android.graphics.Canvas;
 import android.util.Log;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,8 @@ public class Player implements GameObject {
     private GameBitmap bitmap_right;
     private int dir;
     private int currentStair = 0;
-    
+    private ProgressBar progressBar;
+    private float progressGauage = 100.f;
 
     public Player(float x, float y, int dir) {
         this.x = x;
@@ -31,13 +33,24 @@ public class Player implements GameObject {
         int player_right = R.mipmap.player_right;
         this.bitmap_left = new AnimationGameBitmap(player_left, FRAMES_PER_SECOND, 0);
         this.bitmap_right = new AnimationGameBitmap(player_right, FRAMES_PER_SECOND, 0);
+
+        progressBar = null;
     }
 
     public void setupDir() { this.dir *= -1.0f;}
+    public void setProgressBar(ProgressBar progressBar) {
+        this.progressBar = progressBar;
+    }
 
     @Override
     public void update() {
-
+        progressGauage -= 0.016f * 8.0f;
+        if (progressGauage < 0){
+            progressGauage = 0;
+        }
+        if (null != progressBar) {
+            progressBar.setProgress((int)progressGauage);
+        }
     }
 
     @Override
@@ -72,6 +85,7 @@ public class Player implements GameObject {
             ++currentStair;
 
             mainGame.score.addScore(1);
+            ++progressGauage;
         }
     }
 }
