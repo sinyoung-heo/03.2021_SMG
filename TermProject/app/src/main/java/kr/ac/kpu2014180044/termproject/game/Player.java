@@ -13,6 +13,7 @@ import kr.ac.kpu2014180044.termproject.R;
 import kr.ac.kpu2014180044.termproject.framework.AnimationGameBitmap;
 import kr.ac.kpu2014180044.termproject.framework.GameBitmap;
 import kr.ac.kpu2014180044.termproject.framework.GameObject;
+import kr.ac.kpu2014180044.termproject.framework.Sound;
 
 public class Player implements GameObject {
     private static final String TAG = Player.class.getSimpleName();
@@ -50,6 +51,8 @@ public class Player implements GameObject {
         progressBar = null;
         scoreTextView = null;
         retryButton = null;
+
+        Sound.play(R.raw.map_bgm);
     }
 
     public void setupDir() {
@@ -154,9 +157,12 @@ public class Player implements GameObject {
 
             mainGame.score.addScore(1);
             ++progressGauge;
+
+            Sound.play(R.raw.up_stairs);
         }
         else {
             isEndGame = true;
+            Sound.play(R.raw.game_over);
         }
     }
 }
