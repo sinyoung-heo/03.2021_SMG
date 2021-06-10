@@ -2,11 +2,13 @@ package kr.ac.kpu2014180044.termproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton dirChangeButton;
     private ImageButton upStairButton;
     private ProgressBar progressBar;
+    private TextView scoreTextView;
     MainGame mainGame;
     Player player;
     private int startIdx = 0;
@@ -35,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         dirChangeButton = findViewById(R.id.DirChange);
         upStairButton = findViewById(R.id.UpStairs);
         progressBar = findViewById(R.id.ProgressBar);
+        scoreTextView = findViewById(R.id.ScoreText);
+
+        scoreTextView.setBackgroundColor(Color.argb(0,255,255,255));
+        scoreTextView.setTextColor(Color.argb(0,255,255,255));
 
         dirChangeButton.setImageResource(R.mipmap.dir_change);
         dirChangeButton.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
 //                Log.d(TAG, "onBtnClick dirChange");
                 player = mainGame.getPlayer();
                 player.setupDir();
+
                 player.setProgressBar(progressBar);
+                player.setScoreTextView(scoreTextView);
             }
         });
 
@@ -55,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 // Player
                 player = mainGame.getPlayer();
                 player.upStairs();
+
                 player.setProgressBar(progressBar);
+                player.setScoreTextView(scoreTextView);
             }
         });
     }

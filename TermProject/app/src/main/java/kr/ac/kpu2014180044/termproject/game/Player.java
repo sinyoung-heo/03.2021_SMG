@@ -1,12 +1,13 @@
 package kr.ac.kpu2014180044.termproject.game;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.util.Log;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import kr.ac.kpu2014180044.termproject.MainActivity;
 import kr.ac.kpu2014180044.termproject.R;
 import kr.ac.kpu2014180044.termproject.framework.AnimationGameBitmap;
 import kr.ac.kpu2014180044.termproject.framework.GameBitmap;
@@ -22,7 +23,9 @@ public class Player implements GameObject {
     private int dir;
     private int currentStair = 0;
     private ProgressBar progressBar;
-    private float progressGauage = 100.f;
+    private float progressGauge = 100.f;
+    private TextView scoreTextView;
+    private boolean isEndGame = false;
 
     public Player(float x, float y, int dir) {
         this.x = x;
@@ -35,21 +38,35 @@ public class Player implements GameObject {
         this.bitmap_right = new AnimationGameBitmap(player_right, FRAMES_PER_SECOND, 0);
 
         progressBar = null;
+        scoreTextView = null;
     }
 
     public void setupDir() { this.dir *= -1.0f;}
     public void setProgressBar(ProgressBar progressBar) {
         this.progressBar = progressBar;
     }
+    public void setScoreTextView(TextView scoreTextView) { this.scoreTextView =scoreTextView; }
 
     @Override
     public void update() {
-        progressGauage -= 0.016f * 8.0f;
-        if (progressGauage < 0){
-            progressGauage = 0;
+        if (!isEndGame){
+            progressGauge -= 0.016f * 8.0f;
+        }
+        if (progressGauge < 0){
+            progressGauge = 0;
         }
         if (null != progressBar) {
-            progressBar.setProgress((int)progressGauage);
+            progressBar.setProgress((int) progressGauge);
+        }
+
+        if (null != scoreTextView) {
+            MainGame mainGame = MainGame.get();
+            scoreTextView.setText("Score:" + mainGame.score.getScore());
+        }
+
+        if (isEndGame) {
+            scoreTextView.setBackgroundColor(Color.argb(255,255,255,255));
+            scoreTextView.setTextColor(Color.argb(255,255,255,255));
         }
     }
 
@@ -74,7 +91,7 @@ public class Player implements GameObject {
 
         Log.d(TAG, "curBrick : " + curBrick.getDir() + "  Player : " + this.dir);
 
-        if (curBrick.getDir() == this.dir) {
+        if (curBrick.getDir() == this.dir && !isEndGame) {
             for (GameObject bricks: brickList) {
                 bricks.downStairs();
             }
@@ -85,7 +102,10 @@ public class Player implements GameObject {
             ++currentStair;
 
             mainGame.score.addScore(1);
-            ++progressGauage;
+            ++progressGauge;
+        }
+        else {
+            isEndGame = true;
         }
     }
 }

@@ -359,14 +359,148 @@ public class MainGame {
         }
 
         // 16
+        startX += offsetX * DIR_RIGHT * 2;
+        for (int i =0; i < 3; ++i) {
+            Brick brick;
+            if ( i == 3 - 1) {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            } else {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_RIGHT;
+            startY -= offsetY;
+        }
+
+        startX += offsetX * DIR_LEFT * 2;
+        for (int i =0; i < 2; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            } else {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_LEFT;
+            startY -= offsetY;
+        }
 
         // 17
+        startX += offsetX * DIR_RIGHT * 2;
+        for (int i =0; i < 2; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            } else {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            }
+            add(Layer.brick, brick);
 
+            startX += offsetX * DIR_RIGHT;
+            startY -= offsetY;
+        }
+
+        startX += offsetX * DIR_LEFT * 2;
+        for (int i =0; i < 2; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            } else {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_LEFT;
+            startY -= offsetY;
+        }
         // 18
+        startX += offsetX * DIR_RIGHT * 2;
+        for (int i =0; i < 2; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            } else {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_RIGHT;
+            startY -= offsetY;
+        }
+
+        startX += offsetX * DIR_LEFT * 2;
+        for (int i =0; i < 5; ++i) {
+            Brick brick;
+            if ( i == 5 - 1) {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            } else {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_LEFT;
+            startY -= offsetY;
+        }
 
         // 19
+        startX += offsetX * DIR_RIGHT * 2;
+        for (int i =0; i < 2; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            } else {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_RIGHT;
+            startY -= offsetY;
+        }
+
+        startX += offsetX * DIR_LEFT * 2;
+        for (int i =0; i < 2; ++i) {
+            Brick brick;
+            if ( i == 2 - 1) {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            } else {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_LEFT;
+            startY -= offsetY;
+        }
 
         // 20
+        startX += offsetX * DIR_RIGHT * 2;
+        for (int i =0; i < 4; ++i) {
+            Brick brick;
+            if ( i == 4 - 1) {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            } else {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_RIGHT;
+            startY -= offsetY;
+        }
+
+        startX += offsetX * DIR_LEFT * 2;
+        for (int i =0; i < 3; ++i) {
+            Brick brick;
+            if ( i == 3 - 1) {
+                brick = new Brick(startX, startY, DIR_RIGHT);
+            } else {
+                brick = new Brick(startX, startY, DIR_LEFT);
+            }
+            add(Layer.brick, brick);
+
+            startX += offsetX * DIR_LEFT;
+            startY -= offsetY;
+        }
 
         initialized = true;
         return true;

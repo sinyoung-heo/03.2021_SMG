@@ -35,6 +35,22 @@
         android:progress="100"
         android:progressTint="#85E119"
         android:scaleY="10"
-        android:translationY="40dp" />
+        android:translationY="40dp"
+        />
+
+    <TextView
+        android:id="@+id/ScoreText"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+
+        android:background="#5061BD"
+        android:backgroundTint="#2196F3"
+
+        android:text="Score:"
+        android:textSize="50sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        />
 
 </RelativeLayout>
