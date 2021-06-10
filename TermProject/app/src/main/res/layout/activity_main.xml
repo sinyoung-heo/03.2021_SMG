@@ -53,4 +53,14 @@
         android:gravity="center"
         />
 
+    <Button
+        android:id="@+id/RetryButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:translationY="125dp"
+        android:text="Retry"
+        />
+
 </RelativeLayout>

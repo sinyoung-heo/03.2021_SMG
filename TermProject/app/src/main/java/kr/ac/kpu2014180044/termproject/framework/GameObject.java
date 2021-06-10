@@ -7,4 +7,6 @@ public interface GameObject {
     public void draw(Canvas canvas);
 
     void downStairs();
+
+    void reset();
 }

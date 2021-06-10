@@ -67,4 +67,10 @@ public class Score implements GameObject {
 
     }
 
+    @Override
+    public void reset() {
+        this.score = 1;
+        this.displayScore = 1;
+    }
+
 }

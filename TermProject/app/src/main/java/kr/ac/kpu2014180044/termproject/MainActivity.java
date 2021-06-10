@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton upStairButton;
     private ProgressBar progressBar;
     private TextView scoreTextView;
+    private Button retryButton;
     MainGame mainGame;
     Player player;
     private int startIdx = 0;
@@ -38,21 +40,26 @@ public class MainActivity extends AppCompatActivity {
         dirChangeButton = findViewById(R.id.DirChange);
         upStairButton = findViewById(R.id.UpStairs);
         progressBar = findViewById(R.id.ProgressBar);
-        scoreTextView = findViewById(R.id.ScoreText);
 
+        scoreTextView = findViewById(R.id.ScoreText);
         scoreTextView.setBackgroundColor(Color.argb(0,255,255,255));
         scoreTextView.setTextColor(Color.argb(0,255,255,255));
+
+        retryButton = findViewById(R.id.RetryButton);
+        retryButton.setEnabled(false);
+        retryButton.setBackgroundColor(Color.argb(0,255,255,255));
+        retryButton.setTextColor(Color.argb(0,255,255,255));
 
         dirChangeButton.setImageResource(R.mipmap.dir_change);
         dirChangeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.d(TAG, "onBtnClick dirChange");
                 player = mainGame.getPlayer();
                 player.setupDir();
 
                 player.setProgressBar(progressBar);
                 player.setScoreTextView(scoreTextView);
+                player.setRetryButton(retryButton);
             }
         });
 
@@ -60,13 +67,31 @@ public class MainActivity extends AppCompatActivity {
         upStairButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.d(TAG, "onBtn upStairs");
-                // Player
                 player = mainGame.getPlayer();
                 player.upStairs();
 
                 player.setProgressBar(progressBar);
                 player.setScoreTextView(scoreTextView);
+                player.setRetryButton(retryButton);
+            }
+        });
+
+        retryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player = mainGame.getPlayer();
+                player.reset();
+
+                ArrayList<GameObject> brickList = mainGame.getLayers().get(3);
+                for (GameObject brick : brickList)
+                    brick.reset();
+
+                scoreTextView.setBackgroundColor(Color.argb(0,255,255,255));
+                scoreTextView.setTextColor(Color.argb(0,255,255,255));
+
+                retryButton.setEnabled(false);
+                retryButton.setBackgroundColor(Color.argb(0,255,255,255));
+                retryButton.setTextColor(Color.argb(0,0,0,0));
             }
         });
     }

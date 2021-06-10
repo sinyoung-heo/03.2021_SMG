@@ -57,4 +57,9 @@ public class VerticalScrollBackground implements GameObject {
     public void downStairs() {
 
     }
+
+    @Override
+    public void reset() {
+
+    }
 }
